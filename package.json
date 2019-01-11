@@ -5,7 +5,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack --watch",
     "build": "webpack --env production",
     "serv": "static build"
   },
