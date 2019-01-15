@@ -1,4 +1,7 @@
  const ExtractTextPlugin = require('extract-text-webpack-plugin');
+ const glob = require('glob');
+ const path = require('path');
+ const PurifyCSSPlugin = require('purgecss-webpack-plugin');
 
  module.exports = function (paths) {
 	return {
@@ -24,7 +27,10 @@
 			]
 		},
 		plugins: [
-			new ExtractTextPlugin('./css/[name].css')
+			new ExtractTextPlugin('./css/[name].css'),
+			new PurifyCSSPlugin({
+				paths: glob.sync(path.join(__dirname, '../source/pages/**/*.pug'),  { nodir: true }),
+			})
 		]
 	};
 };

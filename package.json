@@ -5,8 +5,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --env development",
-    "build": "webpack --env production",
+    "dev": "webpack-dev-server --env development",
+    "prod": "webpack --env production",
     "serv": "static build"
   },
   "devDependencies": {
